@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aviators Birthday Celebration</title>
+    <link rel="stylesheet" href= "style.css">
+    <style>
+        @font-face {
+            font-family: myfont;
+            src: url(Death\ Spirit.ttf);
+        }
+        
+        body {
+            background-color: #000;
+            background-image: url("Screenshot-2022-07-13-at-23-46-52-RechargeMidrand-@rechargemidrand-•-Instagram-photos-and-videos.jpg");
+            color: rgb(231, 49, 49);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            border: 5px solid  rgb(231, 49, 49);
+            text-align: center;
+            background-color: white;
+            width: fit-content;
+            font-family: myfont;
+            font-size: 100px;
+            margin-bottom: 50px;
+        }
+
+        .countdown {
+            border: 5px solid  rgb(231, 49, 49);
+            text-align: center;
+            background-color: #000;
+            width: fit-content;
+            font-size: 72px;
+            margin-bottom: 30px;
+        }
+
+        .invitation {
+            border: 5px solid  rgb(231, 49, 49);
+            text-align: center;
+            background-color: white;
+            width: fit-content;
+            color: #000;
+            font-size: 24px;
+            margin-bottom: 50px;
+        }
+
+        .club-theme {
+            border: 5px solid  rgb(231, 49, 49);
+            text-align: center;
+            background-color: white;
+            color: #000;
+            width: fit-content;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .club-logo {
+            width: 200px;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff6c00;
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aviators Birthday Celebration!</h1>
+    <center>
+        <div class="countdown" id="countdown" align="center"></div>
+    
+    
+
+    <div class="invitation">
+        <p>You're invited to the hottest party of the year! Get ready for a night of non-stop fun, music, and dancing.</p>
+    </div>
+
+    <div class="club-theme">
+        <p>This year, we're transforming into the ultimate club experience. Get your dancing shoes ready and prepare for an unforgettable night.</p>
+    </div>
+    </center>
+
+    <img>
+
+    
+
+    <script>
+        function countdownTimer() {
+            var countdownDate = new Date("June 30, 2023 00:00:00").getTime();
+
+            var countdownInterval = setInterval(function () {
+                var now = new Date().getTime();
+                var timeRemaining = countdownDate - now;
+
+                var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                document.getElementById("countdown").innerHTML = "-     "+days + "d " + hours + "h " + minutes + "m " + seconds + "s     -";
+
+                if (timeRemaining < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById("countdown").innerHTML = "The party has started!";
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            countdownTimer();
+        };
+    </script>
+</body>
+</html>
